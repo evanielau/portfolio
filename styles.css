@@ -525,6 +525,10 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 .markets__combo { display: none !important; }
 @media (max-width: 640px) { .markets__combo { display: flex !important; } }
+@media (max-width: 640px) {
+  .trust__list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; width: 100%; }
+  .trust__list li { font-size: 19px; line-height: 1.15; }
+}
 
 /* ───────────── Reveal on scroll ───────────── */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
