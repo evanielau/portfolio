@@ -524,11 +524,14 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 .cta__a { display: block; margin-top: .12em; font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blush); font-size: 1.15em; letter-spacing: -.01em; }
 
 .markets__combo { display: none !important; }
-@media (max-width: 640px) { .markets__combo { display: flex !important; } }
+@media (max-width: 640px) { .markets__combo { display: flex !important; } .markets__solo { display: none !important; } }
 @media (max-width: 640px) {
   .trust__list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; width: 100%; }
   .trust__list li { font-size: 19px; line-height: 1.15; }
 }
+
+.markets__word { white-space: nowrap; }
+.markets__word--long { font-size: clamp(24px, 2.6vw, 34px); padding-top: .18em; }
 
 /* ───────────── Reveal on scroll ───────────── */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
