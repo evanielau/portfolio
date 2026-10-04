@@ -5,8 +5,8 @@
   // ── Language toggle ──
   // Always opens in English (no browser-language detection, nothing remembered).
   var titles = {
-    en: 'Yanxi Liu — Marketing Portfolio',
-    fr: 'Yanxi Liu — Portfolio Marketing'
+    en: 'Yanxi Liu | Marketing Portfolio',
+    fr: 'Yanxi Liu | Portfolio Marketing'
   };
   var langButtons = document.querySelectorAll('[data-set-lang]');
 

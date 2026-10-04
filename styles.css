@@ -363,7 +363,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
   text-align: center;
 }
 .cta .eyebrow { color: var(--blush); }
-.cta__title { font-size: clamp(34px, 5.4vw, 76px); letter-spacing: -.035em; font-weight: 700; line-height: 1.05; max-width: 18ch; margin: 0 auto 44px; }
+.cta__title { font-size: clamp(34px, 5.4vw, 76px); letter-spacing: -.035em; font-weight: 700; line-height: 1.05; max-width: 22ch; margin: 0 auto 44px; }
 .cta__title em { color: var(--blush); }
 .cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .cta__mail { margin: 28px 0 0; font-size: 14px; color: var(--inverse-muted); }
@@ -496,7 +496,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* ───────────── Hero: name + intro left, receipt right (fits first screen) ───────────── */
 .hero { padding-top: clamp(28px, 4.5vh, 56px); padding-bottom: 40px; }
-.hero__grid { grid-template-columns: minmax(0, max-content) minmax(300px, 360px); justify-content: start; align-items: start; gap: clamp(40px, 6vw, 110px); }
+.hero__grid { grid-template-columns: minmax(0, max-content) minmax(300px, 360px); justify-content: start; align-items: start; gap: clamp(56px, 10vw, 170px); }
 .hero__main .hero__title { font-size: clamp(56px, 9.6vw, 150px); margin-bottom: clamp(18px, 3vh, 32px); }
 .hero__main .hero__claim { max-width: 20ch; }
 .printer { max-width: 360px; margin-top: 4px; justify-self: start; }
@@ -518,12 +518,41 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
   .hero__main .hero__title { font-size: clamp(64px, 15.5vw, 160px); }
 }
 
+/* CTA headline: question on one line, answer below */
+.cta__q { display: block; }
+.cta__hl { color: var(--blush); font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+.cta__a { display: block; margin-top: .12em; font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--blush); font-size: 1.15em; letter-spacing: -.01em; }
+
 /* ───────────── Reveal on scroll ───────────── */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
 .js .reveal.is-in { opacity: 1; transform: none; }
 .js .label.reveal { transform: translateY(24px) rotate(1.5deg); }
 .js .label.reveal.is-in { transform: rotate(1.5deg); }
 .js .label.reveal.is-in:hover { transform: rotate(0deg); }
+
+
+/* ───────────── Polaroid portrait (taped) ───────────── */
+.brief__photo {
+  position: relative; background: #fffdf9; padding: 12px 12px 58px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 22px 40px -18px rgba(27,26,25,.45);
+  transform: rotate(2deg); transition: transform .4s ease;
+  max-width: 300px;
+}
+.brief__photo::before { /* washi tape */
+  content: ""; position: absolute; z-index: 2; top: -14px; left: 50%; width: 110px; height: 30px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(231, 185, 196, .78); box-shadow: 0 1px 2px rgba(0,0,0,.08);
+}
+.brief__photo img { aspect-ratio: 1 / 1.06; border-radius: 0; object-position: 50% 30%; filter: saturate(.95) contrast(1.02); }
+.brief__photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 12px; transform: none;
+  background: none; color: #232120; padding: 0; border-radius: 0;
+  font-family: "Nanum Pen Script", cursive; font-size: 32px; line-height: 1; font-weight: 400;
+  letter-spacing: 0; text-transform: none; text-align: center; white-space: nowrap;
+}
+.js .brief__photo.reveal { transform: translateY(24px) rotate(2deg); }
+.js .brief__photo.reveal.is-in { transform: rotate(2deg); }
+.brief__photo:hover, .js .brief__photo.reveal.is-in:hover { transform: rotate(0deg) translateY(-4px); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
